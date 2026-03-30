@@ -42,6 +42,7 @@
     <ItemGroup>
         <Compile Include="Enums\EquipmentStatus.cs" />
         <Compile Include="Exceptions\EquipmentNotFoundException.cs" />
+        <Compile Include="Exceptions\UserNotFoundException.cs" />
         <Compile Include="Models\Camera.cs" />
         <Compile Include="Models\Employee.cs" />
         <Compile Include="Models\Equipment.cs" />
@@ -53,6 +54,8 @@
         <Compile Include="Program.cs"/>
         <Compile Include="Services\EquipmentService.cs" />
         <Compile Include="Services\IEquipmentService.cs" />
+        <Compile Include="Services\IUserService.cs" />
+        <Compile Include="Services\UserService.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
