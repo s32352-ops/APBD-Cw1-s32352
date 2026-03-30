@@ -32,13 +32,13 @@ namespace EquipmentRental.Services
             equipment.Status = EquipmentStatus.Rented;
         }
 
-        public void Return(int equipmentId)
+        public void Return(int equipmentId, DateTime returnedAt)
         {
             var rental = _rentals.FirstOrDefault(r => r.Equipment.Id == equipmentId && !r.IsReturned);
             if (rental == null)
                 throw new RentalNotFoundException();
 
-            rental.Return(DateTime.Now);
+            rental.Return(returnedAt);
 
             var equipment = _equipmentService.GetById(equipmentId);
             equipment.Status = EquipmentStatus.Available;
